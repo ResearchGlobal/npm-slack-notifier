@@ -12,8 +12,8 @@ const ssl = !!sasl
 const kafka = new Kafka({
   clientId: 'npm-slack-notifier',
   brokers: [process.env.KAFKA_BOOTSTRAP_SERVER],
-  ssl,
-  sasl
+  // ssl,
+  // sasl
 })
 
 module.exports = kafka;
