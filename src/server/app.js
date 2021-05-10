@@ -14,7 +14,7 @@ module.exports = ({ producer, config }) => {
         version,
         timestamp,
       });
-
+      console.log('***** /server/app.js spinning up');
       try {
         await producer.send({
           topic: config.topic,

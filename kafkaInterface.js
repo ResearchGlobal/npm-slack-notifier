@@ -9,21 +9,35 @@ kafkaApp.use(express.Router());
 
 
 //main server route. customize as needed
-const welcomeToServer = 'WELCOME TO SERVER'
+const welcomeToServer = {payload:'WELCOME TO SERVER'}
 kafkaApp.get('/test', (req,res) => {
-  return res.status(200).send(welcomeToServer);
+  return res.status(200).json(welcomeToServer);
+  // return res.status(200).sendFile(path.join(__dirname, "./index.html"))
+})
+
+kafkaApp.get('/kafProd',
+  //middleware,
+  (req,res) => {
+    return res.status(200).json({producerTemp: 'producer goes here'});
 })
 
 
 
-if (process.env.NODE_ENV === 'production'){
-  //statically serve everything in the build folder on the route '/build'
-  kafkaApp.use('/build', express.static(path.join(__dirname,'../build')));
-  //serve index.html on the route '/'
-  kafkaApp.get('/', (req,res) => {
-    return res.status(200).sendFile(path.join(__dirname, '../index.html'));
-  });
-}
+
+
+
+
+
+
+
+// if (process.env.NODE_ENV === 'production'){
+//   //statically serve everything in the build folder on the route '/build'
+//   kafkaApp.use('/build', express.static(path.join(__dirname,'../build')));
+//   //serve index.html on the route '/'
+//   kafkaApp.get('/', (req,res) => {
+//     return res.status(200).sendFile(path.join(__dirname, '../index.html'));
+//   });
+// }
 
 /**
  * 404 handler
