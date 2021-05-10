@@ -24,6 +24,7 @@
     "@slack/webhook": "^5.0.3",
     "kafkajs": "^1.14.0",
     "nodemon": "^2.0.7",
-    "npm-hook-receiver": "^1.0.0"
+    "npm-hook-receiver": "^1.0.0",
+    "react": "^17.0.2"
   }
 }
