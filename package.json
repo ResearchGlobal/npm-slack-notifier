@@ -10,11 +10,7 @@
     "start:consumer": "node src/consumer/index.js",
     "build": "NODE_ENV=production webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
-<<<<<<< HEAD
     "dev": "NODE_ENV=development webpack server --open & NODE_ENV=development nodemon kafkaInterface.js"
-=======
-    "dev": "NODE_ENV=development webpack server --open & NODE_ENV=development nodemon kakfaInterface.js"
->>>>>>> b994f0d4f2d2541add62084de0c721abfc7547e4
   },
   "repository": {
     "type": "git",

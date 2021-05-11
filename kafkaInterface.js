@@ -3,6 +3,8 @@ const kafkaApp = express();
 const kafkaAppRouter = express.Router();
 const path = require('path');
 
+// const mainProducerFunc = require('./server.js');
+// const mainConsumerFunc = require('./consumer.js')
 
 kafkaApp.use(express.json());
 kafkaApp.use(express.urlencoded({ extended: true }));
@@ -22,15 +24,6 @@ kafkaApp.get('/kafProd',
   (req,res) => {
     return res.status(200).json({producerTemp: 'producer goes here'});
 })
-
-
-
-
-
-
-
-
-
 
 // if (process.env.NODE_ENV === 'production'){
 //   //statically serve everything in the build folder on the route '/build'

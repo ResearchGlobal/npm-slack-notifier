@@ -38,12 +38,16 @@ const main = async () => {
   })
 }
 
-main().catch(async error => {
+const mainConsumerFunc = () => main().catch(async error => {
   console.error(error);
   try {
-    await conssumer.disconnect();
+    await consumer.disconnect();
   } catch (e) {
     console.error('Failed to gracefully disconnect consumer', e)
   }
   process.exit(1);
 })
+
+mainConsumerFunc();
+
+// module.exports = main;

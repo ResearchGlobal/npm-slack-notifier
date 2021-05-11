@@ -1,6 +1,6 @@
 const createHookReceiver = require('npm-hook-receiver')
 const kafka = require('./kafka');
-const cors = require('cors')
+// const cors = require('cors')
 
 const producer = kafka.producer();
 
@@ -44,7 +44,12 @@ const main = async () => {
   })
 }
 
-main().catch(error => {
+
+const mainProducerFunc = () => main().catch(error => {
   console.error(error)
   process.exit(1)
 })
+
+mainProducerFunc();
+
+// module.exports = main;
