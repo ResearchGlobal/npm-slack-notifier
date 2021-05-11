@@ -36,7 +36,13 @@ module.exports = {
       '/kafsrv': {
         target: 'http://localhost:4000',
         secure: false,
-      } //connects to the proxy server, in server.js. how we connect to node. points to the /api/leaders route in server.js
+      },
+      '/hook': {
+        target: 'http://localhost:3001',
+        secure: false,
+      }
+
+      //connects to the proxy server, in server.js. how we connect to node. points to the /api/leaders route in server.js
       //this is how to route to the server. fetch /api
       //changed it to 4000 to see how it would work. make sure to change the server.js app.listen(3000) arg to (4000) or what's specced above
     }

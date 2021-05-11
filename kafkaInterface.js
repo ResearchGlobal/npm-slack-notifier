@@ -1,29 +1,32 @@
 const express = require('express');
 const kafkaApp = express();
+const kafkaAppRouter = express.Router();
 const path = require('path');
 
 
 kafkaApp.use(express.json());
 kafkaApp.use(express.urlencoded({ extended: true }));
-kafkaApp.use(express.Router());
+// kafkaApp.use(express.Router());
 
+// kafkaApp.use('/kafsrv', kafkaAppRouter)
 
 //main server route. customize as needed
 const welcomeToServer = 'WELCOME TO SERVER'
-kafkaApp.get('/test', (req,res) => {
+kafkaApp.get('/kafsrv/test', (req,res) => {
+  // console.log('hitting test endpoint')
   return res.status(200).send(welcomeToServer);
 })
 
 
 
-if (process.env.NODE_ENV === 'production'){
-  //statically serve everything in the build folder on the route '/build'
-  kafkaApp.use('/build', express.static(path.join(__dirname,'../build')));
-  //serve index.html on the route '/'
-  kafkaApp.get('/', (req,res) => {
-    return res.status(200).sendFile(path.join(__dirname, '../index.html'));
-  });
-}
+// if (process.env.NODE_ENV === 'production'){
+//   //statically serve everything in the build folder on the route '/build'
+//   kafkaApp.use('/build', express.static(path.join(__dirname,'../build')));
+//   //serve index.html on the route '/'
+//   kafkaApp.get('/', (req,res) => {
+//     return res.status(200).sendFile(path.join(__dirname, '../index.html'));
+//   });
+// }
 
 /**
  * 404 handler

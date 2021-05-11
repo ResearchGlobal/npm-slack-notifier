@@ -1,5 +1,6 @@
 const createHookReceiver = require('npm-hook-receiver')
 const kafka = require('./kafka');
+const cors = require('cors')
 
 const producer = kafka.producer();
 
