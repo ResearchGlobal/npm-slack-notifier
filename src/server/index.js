@@ -6,6 +6,7 @@ const client = new Kafka(config.kafka);
 const producer = client.producer();
 
 const main = async () => {
+  console.log('***** /server/index.js spinning up');
   await producer.connect();
 
   const app = createApp({ producer, config: config.app });

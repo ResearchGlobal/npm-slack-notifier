@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
@@ -8,6 +9,15 @@ import axios from 'axios'
 //   })
 //   .catch(err => console.log(err))
 
+=======
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
+
+axios.get('/test')
+  .then(data => console.log(data))
+  .catch(err => console.log (err))
+>>>>>>> b994f0d4f2d2541add62084de0c721abfc7547e4
 
 // let dataFromTest = ''
 
@@ -20,11 +30,20 @@ import axios from 'axios'
 //     // [] below takes in dependencies that will invoke useEffect when the its values change
 //   }, [])
 
+<<<<<<< HEAD
 
+=======
+// const fetchFromTest = async () => {
+//     const res = await fetchFromTest('http://locahost:4000/test')
+//     const data = await res.json()
+//     return data;
+//   }
+>>>>>>> b994f0d4f2d2541add62084de0c721abfc7547e4
 
 class App extends React.Component {
   constructor () {
     super()
+<<<<<<< HEAD
     this.fetchFromTest = this.fetchFromTest.bind(this);
     this.postToHook = this.postToHook.bind(this);
   }
@@ -55,3 +74,14 @@ class App extends React.Component {
 }
 
 export default App;
+=======
+  }
+  render() {
+    return <div>
+      <h1>dataFromTest</h1>
+    </div>
+  }
+}
+
+export default App;
+>>>>>>> b994f0d4f2d2541add62084de0c721abfc7547e4
