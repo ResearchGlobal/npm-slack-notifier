@@ -2,9 +2,42 @@ const express = require('express');
 const kafkaApp = express();
 const kafkaAppRouter = express.Router();
 const path = require('path');
+const WebSocket = require('ws');
+// const socket = new WebSocket('ws://localhost:3001/');
+const {instantiate} = require('./instantiate.js')
+console.log(instantiate)
+let ITS_A_KAFKA;
 
-// const mainProducerFunc = require('./server.js');
-// const mainConsumerFunc = require('./consumer.js')
+console.log(1)
+const getKafka = async function(){
+  console.log(2)
+  // ITS_A_KAFKA = await kafkaObj.consumer({groupId: 'group-id'}).connect()
+  const admin = await instantiate(['localhost:9092']);
+  console.log(admin.listTopics())
+  // let KAKFA_TOPICS = await ITS_A_KAFKA.listTopics();
+  console.log(KAKFA_TOPICS)
+  console.log(3)
+}
+
+getKafka();
+
+// socket.addEventListener('open', function(event){
+//   console.log(event);
+//   socket.send('hello server!');
+// })
+
+// socket.addEventListener('message', function(event){
+//   console.log('***** message from server', event.data)
+// ;})
+
+// socket.on('open', function open(){
+//   socket.send('something')
+// })
+
+// socket.on('message', function incoming(data){
+//   console.log(data);
+// })
+
 
 kafkaApp.use(express.json());
 kafkaApp.use(express.urlencoded({ extended: true }));

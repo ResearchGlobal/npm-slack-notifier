@@ -14,6 +14,6 @@ const kafka = new Kafka({
   brokers: [process.env.KAFKA_BOOTSTRAP_SERVER],
   // ssl,
   // sasl
-})
+});
 
 module.exports = kafka;
