@@ -11,17 +11,10 @@ kafkaApp.use(express.urlencoded({ extended: true }));
 // kafkaApp.use('/kafsrv', kafkaAppRouter)
 
 //main server route. customize as needed
-<<<<<<< HEAD
 const welcomeToServer = 'WELCOME TO SERVER'
 kafkaApp.get('/kafsrv/test', (req,res) => {
   // console.log('hitting test endpoint')
   return res.status(200).send(welcomeToServer);
-=======
-const welcomeToServer = {payload:'WELCOME TO SERVER'}
-kafkaApp.get('/test', (req,res) => {
-  return res.status(200).json(welcomeToServer);
-  // return res.status(200).sendFile(path.join(__dirname, "./index.html"))
->>>>>>> b994f0d4f2d2541add62084de0c721abfc7547e4
 })
 
 kafkaApp.get('/kafProd',
